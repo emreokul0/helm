@@ -2,24 +2,24 @@ clusterName: "elasticsearch"
 nodeGroup: "master"
 
 roles:
-    master: true
-    ingest: true
-    data: true
+  master: true
+  ingest: false
+  data: false
 
 replicas: 1
 
 esJavaOpts: "-Xmx1g -Xms1g"
 
 resources:
-    requests:
-        cpu: "100m"
-        memory: "1Gi"
-    limits:
-        cpu: "1000m"
-        memory: "1Gi"
+  requests:
+    cpu: "200m"
+    memory: "2Gi"
+  limits:
+    cpu: "1000m"
+    memory: "2Gi"
 
 volumeClaimTemplate:
-    accessModes: [ "ReadWriteOnce" ]
-    resources:
-        requests:
-            storage: 5Gi
+  accessModes: [ "ReadWriteOnce" ]
+  resources:
+    requests:
+      storage: 10Gi
